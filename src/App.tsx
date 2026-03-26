@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CubicInput } from "./component/CubicInput";
 import { CubicEquation } from "./component/CubicEquation";
 import { CubicTable } from "./component/CubicTable";
+import { CubicGraph } from "./component/CubicGraph";
 
 export const App = () => {
   const [coefficients, setCoefficients] = useState({ a: 0, b: 0, c: 0, d: 0 });
@@ -11,6 +12,7 @@ export const App = () => {
       <CubicInput onSave={(a, b, c, d) => setCoefficients({ a, b, c, d })} />
       <CubicEquation {...coefficients} />
       <CubicTable {...coefficients} />
+      <CubicGraph {...coefficients} />
     </div>
   );
 };
