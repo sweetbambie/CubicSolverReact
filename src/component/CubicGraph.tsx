@@ -50,5 +50,5 @@ export const CubicGraph = ({a, b, c , d}: CubicEquationProps) => {
     ctx.stroke();
   }, [a,b,c,d]);
 
-  return <canvas ref={canvas} width={600} height={600} />;
+  return < canvas ref={canvas} width={600} height={600} style={{ background: "white", borderRadius: "8px" }}  />
 }
