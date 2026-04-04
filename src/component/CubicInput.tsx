@@ -22,22 +22,22 @@ export const CubicInput = ({ onSave }: CubicInputProps) => {
       <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
           <label style={{ color: "rgb(255, 0, 144)" }}>a value:</label>
-          <input type="number" value={a} onChange={e => setA(Number(e.target.value))}
+          <input type="number" value={a} onChange={e => { setA(Number(e.target.value)); onSave(Number(e.target.value), b, c, d); }}
             style={{ border: 0, outline: 0, padding: "5px", borderRadius: "4px" }} />
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
           <label style={{ color: "rgb(255, 0, 144)" }}>b value:</label>
-          <input type="number" value={b} onChange={e => setB(Number(e.target.value))}
+          <input type="number" value={b} onChange={e => { setB(Number(e.target.value)); onSave(Number(e.target.value), b, c, d); }}
             style={{ border: 0, outline: 0, padding: "5px", borderRadius: "4px" }} />
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
           <label style={{ color: "rgb(255, 0, 144)" }}>c value:</label>
-          <input type="number" value={c} onChange={e => setC(Number(e.target.value))}
+          <input type="number" value={c} onChange={e => { setC(Number(e.target.value)); onSave(Number(e.target.value), b, c, d); }}
             style={{ border: 0, outline: 0, padding: "5px", borderRadius: "4px" }} />
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
           <label style={{ color: "rgb(255, 0, 144)" }}>d value:</label>
-          <input type="number" value={d} onChange={e => setD(Number(e.target.value))}
+          <input type="number" value={d} onChange={e => { setD(Number(e.target.value)); onSave(Number(e.target.value), b, c, d); }}
             style={{ border: 0, outline: 0, padding: "5px", borderRadius: "4px" }} />
         </div>
         <button onClick={handleSave} style={{ background: "rgb(245, 140, 199)", color: "rgb(255, 0, 144)", fontSize: "16px", padding: "10px", cursor: "pointer", marginTop: "10px", border: 0, borderRadius: "4px", fontFamily: "'Courier New', Courier, monospace",}}>
