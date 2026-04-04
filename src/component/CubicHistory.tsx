@@ -16,9 +16,6 @@ export const CubicHistory = ({ history, onSelect }: CubicHistoryProps) => {
       <h1 style={{ color: "rgb(255, 0, 144)", marginBottom: "16px", fontSize: "28px",fontWeight: "bold", borderBottom: "2px solid rgb(245, 140, 199)", paddingBottom: "10px",}}>
         History
       </h1>
-      {history.length === 0 ? (
-        <p style={{ color: "rgb(255, 0, 144)" }}>No saved equations yet.</p>
-      ) : (
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <thead>
             <tr style={{ background: "rgb(245, 140, 199)", color: "rgb(255, 0, 144)", fontWeight: "bold" }}>
@@ -45,7 +42,6 @@ export const CubicHistory = ({ history, onSelect }: CubicHistoryProps) => {
             ))}
           </tbody>
         </table>
-      )}
     </div>
   );
 };

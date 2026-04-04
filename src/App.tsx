@@ -27,7 +27,7 @@ export const App = () => {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-      <CubicInput onSave={handleSave} />
+      <CubicInput onChange={handleSelect} onSave={handleSave} />
       <CubicEquation {...coefficients} />
       <CubicTable {...coefficients} />
       <CubicGraph {...coefficients} />
