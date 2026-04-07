@@ -83,8 +83,8 @@ export const CubicTable = ({ a, b, c, d }: CubicEquationProps) => {
           </tr>
           <tr>
             <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">Maximum</td>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)] overflow-hidden" >{maxX.toFixed(2)}</td>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)] overflow-hidden">{maxY.toFixed(2)}</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">{maxX.toFixed(2)}</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">{maxY.toFixed(2)}</td>
           </tr>
         </tbody>
       </table>
