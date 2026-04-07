@@ -26,12 +26,16 @@ export const App = () => {
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-      <CubicInput onChange={handleSelect} onSave={handleSave} />
-      <CubicEquation {...coefficients} />
-      <CubicTable {...coefficients} />
-      <CubicGraph {...coefficients} />
-      <CubicHistory history={history} onSelect={handleSelect} />
+    <div className="flex flex-row justify-center items-start gap-10 max-w-[1200px]">
+      <div className="flex flex-col gap-5 w-[400px]">
+        <CubicInput onChange={handleSelect} onSave={handleSave} />
+        <CubicTable {...coefficients} />
+      </div>
+      <div className="flex flex-col gap-20 w-[400px]">
+        <CubicEquation {...coefficients} />
+        <CubicGraph {...coefficients} />
+        <CubicHistory history={history} onSelect={handleSelect} />
+      </div>
     </div>
   );
 };
