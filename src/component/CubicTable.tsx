@@ -1,14 +1,18 @@
 import type { CubicEquationProps } from "../Types"; 
 
 export const CubicTable = ({ a, b, c, d }: CubicEquationProps) => {
-  const p = (3 * a * c - (b**2)) / (3 * a ** 2);
-  const q = ((27 * (a**2) * d - 9 * a * b * c + 2 * (b**3))) / (27 * (a**3))
-  const discriminant = ((q / 2)** 2) + ((p / 3)** 3);
+  const p = ((3 * a * c - (b**2)) / (3 * a ** 2));
+  const q = ((27 * (a**2) * d - 9 * a * b * c + 2 * (b**3))) / (27 * (a**3));
+  const discriminantRaw = (((q / 2)** 2) + ((p / 3)** 3));
+  const EPS = 1e-10;
+  const discriminant = Math.abs(discriminantRaw) < EPS ? 0 : discriminantRaw;
 
   let x1: number, x2: string | number, x3: string | number;
 
   if (discriminant < 0) {
-    const angle = (1 / 3) * Math.acos(-q / (2 * (Math.sqrt(-Math.pow(p / 3, 3)))));
+    const cosArg = -q / (2 * Math.sqrt(-Math.pow(p / 3, 3)));
+    const clamped = Math.min(1, Math.max(-1, cosArg));
+    const angle = (1/3) * Math.acos(clamped);
     x1 = (2 * (Math.sqrt(-p / 3)) * Math.cos(angle)) - (b / (3 * a));
     x2 = (2 * (Math.sqrt(-p / 3)) * Math.cos(angle + (2 * Math.PI) / 3)) - (b / (3 * a));
     x3 = (2 * (Math.sqrt(-p / 3)) * Math.cos(angle + (4 * Math.PI) / 3)) - (b / (3 * a));
@@ -27,10 +31,10 @@ export const CubicTable = ({ a, b, c, d }: CubicEquationProps) => {
     x3 = -r1 - shift;
   }
 
-  const minX = ((-b - Math.sqrt(b**2 - 3*a*c)) / (3*a))
-  const maxX = ((-b + Math.sqrt(b**2 - 3*a*c)) / (3*a))
-  const minY = (a*(minX**3) + b*(minX**2) + c*minX + d)
-  const maxY = (a*(maxX**3) + b*(maxX**2) + c*maxX + d)
+  const maxX = ((-b - Math.sqrt(b**2 - 3*a*c)) / (3*a))
+  const minX = ((-b + Math.sqrt(b**2 - 3*a*c)) / (3*a))
+  const maxY = (a*(minX**3) + b*(minX**2) + c*minX + d)
+  const minY = (a*(maxX**3) + b*(maxX**2) + c*maxX + d)
 
   return (
     <div className="flex flex-col p-[20px] bg-[rgb(255,189,226)] rounded-[8px] font-['Courier_New',Courier,monospace] text-[rgb(255,0,144)]">
