@@ -1,4 +1,4 @@
-import type { CubicHistoryProps } from "../Types";
+import type { CubicHistoryProps } from "../types";
 
 export const CubicHistory = ({ history, onSelect }: CubicHistoryProps) => {
   return (

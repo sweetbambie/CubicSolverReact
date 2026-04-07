@@ -1,6 +1,7 @@
 import {useRef, useEffect} from 'react';
+import type { CubicEquationProps } from "../types";
 
-export const CubicGraph = ({a, b, c, d} : { a: number, b: number, c: number, d: number }) => { 
+export const CubicGraph = ({a, b, c, d} : CubicEquationProps) => { 
   const canvas = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
     if (!canvas.current) return;                      
@@ -30,8 +31,8 @@ export const CubicGraph = ({a, b, c, d} : { a: number, b: number, c: number, d: 
     ctx.lineWidth = 2;
     ctx.beginPath();
     for (let x = -300; x <= 300; x++) {
-      const X = x / 20;
-      const y = a * X * X * X + b * X * X + c * X + d;
+      const u = x / 20;
+      const y = a * (u **3) + (b * u**2) + c * u + d;
       ctx.lineTo(300 + x, 300 - y * 20);
     }
     ctx.stroke();

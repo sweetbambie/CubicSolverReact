@@ -1,4 +1,4 @@
-import type { CubicEquationProps } from "../Types"
+import type { CubicEquationProps } from "../types"
 
 export const CubicEquation = ({a, b, c, d} : CubicEquationProps ) => {
   return (

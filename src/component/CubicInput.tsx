@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { CubicInputProps } from "../Types";
+import type { CubicInputProps } from "../types";
 
 export const CubicInput = ({ onChange, onSave }: CubicInputProps) => {
   const [a, setA] = useState<string>("0");
