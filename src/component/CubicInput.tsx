@@ -15,7 +15,7 @@ export const CubicInput = ({ onChange, onSave }: CubicInputProps) => {
     onSave(a, b, c, d);
   };
   return (
-  <div className="w-[400px] p-[20px] bg-[rgb(255,189,226)] rounded-[8px] text-[rgb(255,0,144)]">
+  <div className="w-[400px] p-[20px] bg-[rgb(255,189,226)] rounded-[8px] text-[rgb(255,0,144)] font-['Courier_New',Courier,monospace]">
     <h1 className="mb-4 text-[28px] font-bold border-b-2 border-[rgb(245,140,199)] pb-[10px]">
       Cubic Solver
     </h1>
