@@ -2,13 +2,15 @@ import { useState } from "react";
 import type { CubicInputProps } from "../Types";
 
 export const CubicInput = ({ onChange, onSave }: CubicInputProps) => {
-  const [a, setA] = useState<number>(0);
-  const [b, setB] = useState<number>(0);
-  const [c, setC] = useState<number>(0);
-  const [d, setD] = useState<number>(0);
+  const [a, setA] = useState<string>("0");
+  const [b, setB] = useState<string>("0");
+  const [c, setC] = useState<string>("0");
+  const [d, setD] = useState<string>("0");
+
+  const toNum = (val: string) => (val === "" ? 0 : Number(val));
 
   const handleSave = () => {
-    onSave(a, b, c, d);
+    onSave(toNum(a), toNum(b), toNum(c), toNum(d));
   };
 
   return (
@@ -19,22 +21,22 @@ export const CubicInput = ({ onChange, onSave }: CubicInputProps) => {
     <div className="flex flex-col gap-[10px]">
       <div className="flex flex-col gap-1">
         <label>a value:</label>
-        <input type="number" value={a} onChange={e => { setA(Number(e.target.value)); onChange(Number(e.target.value), b, c, d); }}
+        <input type="number" value={a} onChange={e => { const val = e.target.value; setA(val); onChange(toNum(val), toNum(b), toNum(c), toNum(d)); }}
           className="border-0 outline-none p-[5px] rounded" />
       </div>
       <div className="flex flex-col gap-1">
         <label>b value:</label>
-        <input type="number" value={b} onChange={e => { setB(Number(e.target.value)); onChange(Number(e.target.value), b, c, d); }}
+        <input type="number" value={b} onChange={e => { const val = e.target.value; setB(val); onChange(toNum(a), toNum(val), toNum(c), toNum(d)); }}
           className="border-0 outline-none p-[5px] rounded" />
       </div>
       <div className="flex flex-col gap-1">
         <label>c value:</label>
-        <input type="number" value={c} onChange={e => { setC(Number(e.target.value)); onChange(Number(e.target.value), b, c, d); }}
+        <input type="number" value={c} onChange={e => { const val = e.target.value; setC(val); onChange(toNum(a), toNum(b), toNum(val), toNum(d)); }}
           className="border-0 outline-none p-[5px] rounded" />
       </div>
       <div className="flex flex-col gap-1">
         <label>d value:</label>
-        <input type="number" value={d} onChange={e => { setD(Number(e.target.value)); onChange(Number(e.target.value), b, c, d); }}
+        <input type="number" value={d} onChange={e => { const val = e.target.value; setD(val); onChange(toNum(a), toNum(b), toNum(c), toNum(val)); }}
           className="border-0 outline-none p-[5px] rounded" />
       </div>
       <button onClick={handleSave}
