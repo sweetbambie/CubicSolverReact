@@ -1,9 +1,4 @@
-interface CubicEquationProps {
-  a: number;
-  b: number;
-  c: number;
-  d: number;
-}
+import type { CubicEquationProps } from "../Types"; 
 
 export const CubicTable = ({ a, b, c, d }: CubicEquationProps) => {
   const p = (3 * a * c - (b**2)) / (3 * a ** 2);

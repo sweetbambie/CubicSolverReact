@@ -4,13 +4,7 @@ import { CubicEquation } from "./component/CubicEquation";
 import { CubicTable } from "./component/CubicTable";
 import { CubicGraph } from "./component/CubicGraph";
 import { CubicHistory } from "./component/CubicHistory";
-
-interface HistoryEntry {
-  a: number;
-  b: number;
-  c: number;
-  d: number;
-}
+import type { HistoryEntry } from "./Types";
 
 export const App = () => {
   const [coefficients, setCoefficients] = useState({ a: 0, b: 0, c: 0, d: 0 });
