@@ -33,8 +33,8 @@ export const CubicTable = ({ a, b, c, d }: CubicEquationProps) => {
 
   const maxX = ((-b - Math.sqrt(b**2 - 3*a*c)) / (3*a))
   const minX = ((-b + Math.sqrt(b**2 - 3*a*c)) / (3*a))
-  const maxY = (a*(minX**3) + b*(minX**2) + c*minX + d)
-  const minY = (a*(maxX**3) + b*(maxX**2) + c*maxX + d)
+  const minY = (a*(minX**3) + b*(minX**2) + c*minX + d)
+  const maxY = (a*(maxX**3) + b*(maxX**2) + c*maxX + d)
 
   return (
     <div className="flex flex-col p-[20px] bg-[rgb(255,189,226)] rounded-[8px] font-['Courier_New',Courier,monospace] text-[rgb(255,0,144)]">
