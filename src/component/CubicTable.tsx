@@ -34,22 +34,22 @@ export const CubicTable = ({ a, b, c, d }: CubicEquationProps) => {
 
   return (
     <div className="flex flex-col p-[20px] bg-[rgb(255,189,226)] rounded-[8px] font-['Courier_New',Courier,monospace] text-[rgb(255,0,144)]">
-      <h1 className="text-[rgb(255,0,144)] mb-4 text-[28px] font-bold border-b-2 border-[rgb(245,140,199)] pb-[10px]">
+      <h1 className="mb-4 text-[28px] font-bold border-b-2 border-[rgb(245,140,199)] pb-[10px]">
         Results
       </h1>
-      <table className="w-full border-collapse mt-2">
+      <table className="w-full border-collapse mt-2 p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">
         <tbody>
           <tr>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">p</td>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">{p}</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)]">p</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)]">{p}</td>
           </tr>
           <tr>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">q</td>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">{q}</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)]">q</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)]">{q}</td>
           </tr>
           <tr>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">Discriminant</td>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">{discriminant}</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)]">Discriminant</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)]">{discriminant}</td>
           </tr>
           <tr className="bg-[rgb(245,140,199)] text-[rgb(255,0,144)] font-bold">
             <td className="p-2 text-[rgb(255,0,144)]">Value</td>
@@ -57,29 +57,29 @@ export const CubicTable = ({ a, b, c, d }: CubicEquationProps) => {
             <td className="p-2 text-[rgb(255,0,144)]">y</td>
           </tr>
           <tr>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">Root 1</td>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">{x1.toFixed(2)}</td>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">0</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)]">Root 1</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)]">{x1.toFixed(2)}</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)]">0</td>
           </tr>
           <tr>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">Root 2</td>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">{typeof x2 === "number" ? x2.toFixed(2) : x2}</td>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">0</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)]">Root 2</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)]">{typeof x2 === "number" ? x2.toFixed(2) : x2}</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)]">0</td>
           </tr>
           <tr>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">Root 3</td>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">{typeof x3 === "number" ? x3.toFixed(2) : x3}</td>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">0</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)]">Root 3</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)]">{typeof x3 === "number" ? x3.toFixed(2) : x3}</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)]">0</td>
           </tr>
           <tr>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">Minimum</td>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">{minX.toFixed(2)}</td>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">{minY.toFixed(2)}</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)]">Minimum</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)]">{minX.toFixed(2)}</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)]">{minY.toFixed(2)}</td>
           </tr>
           <tr>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">Maximum</td>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">{maxX.toFixed(2)}</td>
-            <td className="p-2 border-b border-[rgb(255,140,200)] text-[rgb(255,0,144)]">{maxY.toFixed(2)}</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)]">Maximum</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)]">{maxX.toFixed(2)}</td>
+            <td className="p-2 border-b border-[rgb(255,140,200)]">{maxY.toFixed(2)}</td>
           </tr>
         </tbody>
       </table>
