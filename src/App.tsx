@@ -20,7 +20,7 @@ export const App = () => {
   };
 
   return (
-    <div className="flex flex-row justify-center items-start gap-10 max-w-[1200px] m-[20px]">
+    <div className="flex flex-row justify-center items-start gap-10 max-w-[1200px] m-[20px] items-center">
       <div className="flex flex-col gap-5 w-[600px]">
         <CubicInput onChange={handleSelect} onSave={handleSave} />
         <CubicTable {...coefficients} />
